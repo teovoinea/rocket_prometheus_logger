@@ -62,20 +62,22 @@ impl Fairing for PrometheusLogger {
                 add_test_headers(response, ms, method.clone(), status.clone());
             }
 
-            prometheus::push_metrics(
-                &self.metric_name,
-                labels! {
-                    "method".to_owned() => method,
-                    "status".to_owned() => status,
-                },
-                &self.address,
-                metric_families,
-                Some(BasicAuthentication{
-                    username: self.username.to_owned(),
-                    password: self.password.to_owned(),
-                }),
-            )
-            .unwrap();
+            if cfg!(not(feature = "test")) {
+                prometheus::push_metrics(
+                    &self.metric_name,
+                    labels! {
+                        "method".to_owned() => method,
+                        "status".to_owned() => status,
+                    },
+                    &self.address,
+                    metric_families,
+                    Some(BasicAuthentication{
+                        username: self.username.to_owned(),
+                        password: self.password.to_owned(),
+                    }),
+                )
+                .unwrap();
+            } 
         }
     }
 }
