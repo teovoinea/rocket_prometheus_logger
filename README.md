@@ -1,5 +1,7 @@
 # rocket_prometheus_logger
 
+Track your rocket endpoint performance in prometheus.
+
 ## Usage
 
 First, import `rocket_prometheus_logger`:
