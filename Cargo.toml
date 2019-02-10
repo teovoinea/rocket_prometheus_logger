@@ -1,0 +1,16 @@
+[package]
+name = "rocket_prometheus_logger"
+version = "0.1.0"
+authors = ["Teodor Voinea <voinea.teodor@gmail.com>"]
+edition = "2018"
+
+[features]
+test = []
+
+[dependencies]
+rocket = "0.4.0"
+lazy_static = "1.1.0"
+
+[dependencies.prometheus]
+version = "0.5.0"
+features = ["push"]
