@@ -24,3 +24,8 @@ rocket::ignite()
 ## Testing
 
 ```cargo test --features "test"```
+
+## 0.2.0 Goals
+
+* Pull based logging
+* Configurable metrics
