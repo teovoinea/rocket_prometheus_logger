@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/voineateodor/voineateodor/_apis/build/status/teovoinea.rocket_prometheus_logger?branchName=master)](https://dev.azure.com/voineateodor/voineateodor/_build/latest?definitionId=2&branchName=master)
+
 # rocket_prometheus_logger
 
 Track your rocket endpoint performance in prometheus.
