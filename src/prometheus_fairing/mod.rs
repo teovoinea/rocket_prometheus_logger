@@ -98,7 +98,6 @@ impl<'a, 'r> FromRequest<'a, 'r> for StartTime {
     }
 }
 
-#[cfg(feature = "test")]
 fn add_test_headers(response: &mut Response, duration: u64, method: String, status: String) {
     response.set_raw_header("X-Test-Prometheus-Logger-Duration", format!("{}", duration));
     response.set_raw_header("X-Test-Prometheus-Logger-Method", format!("{}", method));
