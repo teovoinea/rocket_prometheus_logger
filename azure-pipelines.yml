@@ -7,5 +7,6 @@ jobs:
       displayName: 'Install rust'
     - script: |
         source $HOME/.cargo/env
+        rustup default nightly
         cargo build
         cargo test --features "test"
